@@ -239,4 +239,36 @@ class PHP_PMD_Rule_UnusedPrivateFieldTest extends PHP_PMD_AbstractTest
         $rule->setReport($this->getReportMock(0));
         $rule->apply($this->getClass());
     }
+
+    /**
+     * testRuleDoesNotApplyToPrivateArrayField
+     *
+     * @return void
+     * @covers PHP_PMD_Rule_UnusedPrivateField
+     * @group phpmd
+     * @group phpmd::rule
+     * @group unittest
+     */
+    public function testRuleDoesNotApplyToPrivateArrayField()
+    {
+        $rule = new PHP_PMD_Rule_UnusedPrivateField();
+        $rule->setReport($this->getReportMock(0));
+        $rule->apply($this->getClass());
+    }
+
+    /**
+     * testRuleDoesNotApplyToPrivateObjectField
+     *
+     * @return void
+     * @covers PHP_PMD_Rule_UnusedPrivateField
+     * @group phpmd
+     * @group phpmd::rule
+     * @group unittest
+     */
+    public function testRuleDoesNotApplyToPrivateObjectField()
+    {
+        $rule = new PHP_PMD_Rule_UnusedPrivateField();
+        $rule->setReport($this->getReportMock(0));
+        $rule->apply($this->getClass());
+    }
 }

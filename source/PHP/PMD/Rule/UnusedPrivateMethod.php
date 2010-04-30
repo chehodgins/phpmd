@@ -169,6 +169,9 @@ class PHP_PMD_Rule_UnusedPrivateMethod
         PHP_PMD_Node_ASTNode $postfix
     ) {
         $prefix = $postfix->getParent()->getChild(0);
+        while ($prefix->isInstanceOf('MethodPostfix')) {
+            $prefix = $prefix->getParent()->getParent()->getChild(0);
+        }
         return (
             $prefix->isInstanceOf('SelfReference') ||
             $prefix->isInstanceOf('StaticReference') ||

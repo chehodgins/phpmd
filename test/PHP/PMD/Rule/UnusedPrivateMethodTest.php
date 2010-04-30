@@ -271,4 +271,20 @@ class PHP_PMD_Rule_UnusedPrivateMethodTest extends PHP_PMD_AbstractTest
         $rule->setReport($this->getReportMock(0));
         $rule->apply($this->getClass());
     }
+
+    /**
+     * testRuleDoesNotApplyToNestedMethodCalls
+     *
+     * @return void
+     * @covers PHP_PMD_Rule_UnusedPrivateMethod
+     * @group phpmd
+     * @group phpmd::rule
+     * @group unittest
+     */
+    public function testRuleDoesNotApplyToNestedMethodCalls()
+    {
+        $rule = new PHP_PMD_Rule_UnusedPrivateMethod();
+        $rule->setReport($this->getReportMock(0));
+        $rule->apply($this->getClass());
+    }
 }
